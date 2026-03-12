@@ -1,0 +1,61 @@
+1.Max Consecutive Ones
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) 
+    {
+        int max=0;
+        int count=0;
+        for(int i=0;i<nums.length;i++){
+          {
+            if(nums[i]==1)
+            {
+                    count++;
+                if(count>max){
+                    max=count;
+                }   
+            }
+            else{
+                count=0;
+            }
+        
+            }
+        }
+        return max;
+    }
+}
+
+2.Length Of Last Word
+class Solution {
+    public int lengthOfLastWord(String s) 
+    {
+        s=s.trim();
+        int count=0;
+
+        for(int i=s.length()-1;i>=0;i-- ){
+            if(s.charAt(i)!=' '){
+                count++;
+            }
+            else{
+                break;
+            }
+        }
+        return count;
+    }
+}
+
+3.Append Characters to String to Make Subsequence
+
+class Solution {
+    public int appendCharacters(String s, String t) 
+    {
+        int i=0;
+        int count=0;
+        for(int j=0;j<s.length();j++){
+            if(i<t.length() && s.charAt(j)==t.charAt(i)){
+                i++;
+                count++;
+            }
+        }
+
+        return t.length()-count;
+    }
+}
